@@ -1,7 +1,7 @@
 {
   "name": "@test-party/contrast-color-picker",
   "version": "0.0.1",
-  "description": "🎨 A tiny (2,8 KB) color picker component for React and Preact apps. Fast, well-tested, dependency-free, mobile-friendly and accessible",
+  "description": "🎨 @test-party/contrast-color-picker is a lightweight, customizable color contrast picker designed for React applications. Built with accessibility in mind, it helps developers ensure compliance with WCAG color contrast standards by offering real-time feedback and an intuitive interface.",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
@@ -153,7 +153,8 @@
     "accessibility",
     "aria",
     "a11y",
-    "wai-aria"
+    "wai-aria",
+    "color-contrast"
   ],
   "author": "Christian Rodriguez Ochoa <christian@testparty.ai>",
   "license": "MIT",
