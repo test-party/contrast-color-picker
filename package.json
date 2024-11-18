@@ -1,6 +1,6 @@
 {
-  "name": "react-colorful",
-  "version": "5.6.1",
+  "name": "@test-party/contrast-color-picker",
+  "version": "0.0.1",
   "description": "🎨 A tiny (2,8 KB) color picker component for React and Preact apps. Fast, well-tested, dependency-free, mobile-friendly and accessible",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -22,14 +22,11 @@
     "size": "npm run build && size-limit",
     "check-types": "tsc --noEmit true",
     "test": "jest tests --coverage",
-    "build": "del-cli 'dist/*' && microbundle build --entry src/index.ts --jsx React.createElement --name react-colorful --css inline --tsconfig tsconfig.build.json",
+    "build": "del-cli 'dist/*' && microbundle build --entry src/index.ts --jsx React.createElement --name @test-party/contrast-color-picker --css inline --tsconfig tsconfig.build.json",
     "postbuild": "cpy dist/index.module.js dist --rename=index.mjs && cpy dist/index.module.js.map dist --rename=index.mjs.map",
     "prepublishOnly": "npm run build",
     "check-release": "npm publish --dry-run",
-    "release": "npm publish",
-    "start-demo": "parcel demo/src/index.html --out-dir demo/dist --open",
-    "build-demo": "del-cli 'demo/dist/*' && parcel build demo/src/index.html --out-dir demo/dist --public-url https://omgovich.github.io/react-colorful/",
-    "deploy-demo": "npm run build-demo && gh-pages -d demo/dist"
+    "release": "npm publish"
   },
   "size-limit": [
     {
@@ -137,7 +134,10 @@
     "README.md",
     "package.json"
   ],
-  "repository": "omgovich/react-colorful",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christian-testparty/contrast-color-picker"
+  },
   "keywords": [
     "react",
     "color picker",
@@ -155,12 +155,12 @@
     "a11y",
     "wai-aria"
   ],
-  "author": "Vlad Shilov <omgovich@ya.ru>",
+  "author": "Christian Rodriguez Ochoa <christian@testparty.ai>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/omgovich/react-colorful/issues"
+    "url": "https://github.com/christian-testparty/contrast-color-picker/issues"
   },
-  "homepage": "https://omgovich.github.io/react-colorful",
+  "homepage": "https://github.com/christian-testparty/contrast-color-picker",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
@@ -196,5 +196,11 @@
     "ts-jest": "^26.5.3",
     "typescript": "^4.2.3",
     "use-throttled-effect": "0.0.7"
+  },
+  "dependencies": {
+    "@types/chroma-js": "^2.4.4",
+    "chroma-js": "^3.1.2",
+    "install": "^0.13.0",
+    "npm": "^10.9.0"
   }
 }

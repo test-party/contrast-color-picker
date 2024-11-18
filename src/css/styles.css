@@ -105,3 +105,103 @@
 .react-colorful__hue-pointer {
   z-index: 2;
 }
+
+.contrast-color-picker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  border: 1px solid rgb(164, 175, 185);
+  border-radius: 10px;
+  gap: 15px;
+}
+
+.color-picker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 20px 5px 20px;
+}
+
+.contrast-analysis {
+  width: 100%;
+  border-top: 1px solid #ccc;
+}
+
+.contrast-analysis span {
+  font-size: 0.75rem;
+}
+.contrast-analysis p {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.contrast-analysis-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.contrast-analysis-section.result-fail {
+  background: #FFE2DF;
+}
+
+.contrast-analysis-section.result-pass {
+  background: #E5F6E5;
+}
+
+.contrast-analysis-section.result-fail p {
+  color: #9E3228;
+}
+
+.contrast-analysis-section.result-pass p {
+  color: #346534;
+}
+
+/* Styling for HSVA input component */
+.input-fields {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px; 
+}
+
+.input-fields span {
+  font-size: 0.75rem;
+}
+
+.input-fields-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #bebfc1;
+  border-radius: 5px;
+  transition: border-color 0.2s ease;
+}
+.input-fields-container:focus-within {
+  border-color: rgb(40, 86, 223);
+}
+
+.input-fields input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  box-shadow: none;
+  border-right: 1px solid #bebfc1;
+  width: 30px;
+  height: 21px;
+}
+
+.input-fields input:last-child {
+  border-right: none;
+}
