@@ -28,7 +28,7 @@ export const HexColorInput = (props: HexColorInputProps): JSX.Element => {
   const validate = useCallback((value: string) => validHex(value, alpha), [alpha]);
 
   return (
-    <div>
+    <div className="color-input-container">
       <label htmlFor={props.label}>{props.label}</label>
       <ColorInput
         {...rest}

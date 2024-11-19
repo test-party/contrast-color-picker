@@ -166,7 +166,7 @@
   color: #346534;
 }
 
-/* Styling for HSVA input component */
+/* Styling for ObjectColor type inputs */
 .input-fields {
   display: flex;
   flex-direction: row;
@@ -204,4 +204,31 @@
 
 .input-fields input:last-child {
   border-right: none;
+}
+
+/* Styling for ColorInput */
+.color-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px; 
+}
+
+.color-input-container label {
+  font-size: 0.75rem;
+}
+
+.color-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  background: none;
+  box-shadow: none;
+  height: 21px;
+  border: 1px solid #bebfc1;
+  border-radius: 5px;
+}
+.color-input:focus-within {
+  border-color: rgb(40, 86, 223);
 }

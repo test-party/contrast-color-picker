@@ -47,6 +47,7 @@ export const ColorInput = (props: Props): JSX.Element => {
   return (
     <input
       {...rest}
+      className="color-input"
       value={format ? format(value) : value}
       spellCheck="false" // the element should not be checked for spelling errors
       onChange={handleChange}
