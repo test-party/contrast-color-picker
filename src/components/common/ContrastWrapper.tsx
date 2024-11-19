@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-import { ColorPickerBaseProps } from "../types";
-import { HsvaInputFields } from "./common/HsvaInputFields";
-import { HsvaColorPicker } from "./HsvaColorPicker";
-import { HsvaColor } from "../types";
+import { HsvaInputFields } from "./HsvaInputFields";
+import { HsvaColorPicker } from "../HsvaColorPicker";
+import { HsvaColor } from "../../types";
 import chroma from "chroma-js";
 
-export const ContrastColorPicker = (props: ColorPickerBaseProps<HsvaColor>): JSX.Element => {
+interface ContrastWrapperProps {
+  foregroundColor: HsvaColor;
+  backgroundColor: HsvaColor;
+  children: React.ReactNode;
+}
+
+export const ContrastWrapper = ({ children, foregroundColor, backgroundColor }: ContrastWrapperProps): JSX.Element => {
   const [contrastRatio, setContrastRatio] = useState<number>(0)
   const [pass, setPass] = useState<boolean>(false)
 
@@ -33,8 +38,8 @@ export const ContrastColorPicker = (props: ColorPickerBaseProps<HsvaColor>): JSX
   }
 
   useEffect(() => {
-    const foregroundColorChroma = hsvaToChromaColor(props.color)
-    const backgroundColorChroma = hsvaToChromaColor(props.backgroundColor)
+    const foregroundColorChroma = hsvaToChromaColor(foregroundColor)
+    const backgroundColorChroma = hsvaToChromaColor(backgroundColor)
 
     const blendedForeground = blendColors(foregroundColorChroma, backgroundColorChroma)
     const ratio = chroma.contrast(blendedForeground, backgroundColorChroma)
@@ -43,20 +48,12 @@ export const ContrastColorPicker = (props: ColorPickerBaseProps<HsvaColor>): JSX
     setContrastRatio(ratio)
     setPass(pass)
 
-  }, [props.color, props.backgroundColor])
+  }, [foregroundColor, backgroundColor])
 
   return (
     <div className="contrast-color-picker">
       <div className="color-picker-container">
-        <HsvaColorPicker
-          aria-label="Foreground color picker"
-          color={props.color}
-          onChange={props.onChange}
-        />
-        
-        <HsvaInputFields
-          {...props}
-        />
+        {children}
       </div>
 
       <div className="contrast-analysis">

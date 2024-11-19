@@ -36,6 +36,7 @@ export type AnyColor = string | ObjectColor;
 
 export interface ColorModel<T extends AnyColor> {
   defaultColor: T;
+  defaultBackgroundColor: T;
   toHsva: (defaultColor: T) => HsvaColor;
   fromHsva: (hsva: HsvaColor) => T;
   equal: (first: T, second: T) => boolean;
@@ -48,6 +49,7 @@ type ColorPickerHTMLAttributes = Omit<
 
 export interface ColorPickerBaseProps<T extends AnyColor> extends ColorPickerHTMLAttributes {
   color: T;
+  backgroundColor: T;
   onChange: (newColor: T) => void;
 }
 
@@ -59,4 +61,9 @@ type ColorInputHTMLAttributes = Omit<
 export interface ColorInputBaseProps extends ColorInputHTMLAttributes {
   color?: string;
   onChange?: (newColor: string) => void;
+}
+
+export interface HsvaInputBaseProps<T extends AnyColor> extends ColorPickerHTMLAttributes {
+  color: T;
+  onChange: (newColor: T) => void;
 }

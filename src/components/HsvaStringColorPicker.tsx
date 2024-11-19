@@ -7,6 +7,7 @@ import { hsvaStringToHsva, hsvaToHsvaString } from "../utils/convert";
 
 const colorModel: ColorModel<string> = {
   defaultColor: "hsva(0, 0%, 0%, 1)",
+  defaultBackgroundColor: "hsva(0, 0%, 100%, 1)",
   toHsva: hsvaStringToHsva,
   fromHsva: hsvaToHsvaString,
   equal: equalColorString,

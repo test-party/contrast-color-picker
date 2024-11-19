@@ -9,6 +9,7 @@ interface HexColorInputProps extends ColorInputBaseProps {
   prefixed?: boolean;
   /** Allows `#rgba` and `#rrggbbaa` color formats */
   alpha?: boolean;
+  label: string;
 }
 
 /** Adds "#" symbol to the beginning of the string */
@@ -27,12 +28,17 @@ export const HexColorInput = (props: HexColorInputProps): JSX.Element => {
   const validate = useCallback((value: string) => validHex(value, alpha), [alpha]);
 
   return (
-    <ColorInput
-      {...rest}
-      escape={escape}
-      format={prefixed ? prefix : undefined}
-      process={prefix}
-      validate={validate}
-    />
+    <div>
+      <label htmlFor={props.label}>{props.label}</label>
+      <ColorInput
+        {...rest}
+        id={props.label}
+        escape={escape}
+        format={prefixed ? prefix : undefined}
+        process={prefix}
+        validate={validate}
+      />
+    </div>
+    
   );
 };

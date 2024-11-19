@@ -7,6 +7,7 @@ import { rgbaToHsva, hsvaToRgba, rgbaToRgb } from "../utils/convert";
 
 const colorModel: ColorModel<RgbColor> = {
   defaultColor: { r: 0, g: 0, b: 0 },
+  defaultBackgroundColor: { r: 255, g: 255, b: 255 },
   toHsva: ({ r, g, b }) => rgbaToHsva({ r, g, b, a: 1 }),
   fromHsva: (hsva) => rgbaToRgb(hsvaToRgba(hsva)),
   equal: equalColorObjects,
