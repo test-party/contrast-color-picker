@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import { HsvaInputFields } from "./HsvaInputFields";
-import { HsvaColorPicker } from "../HsvaColorPicker";
 import { HsvaColor } from "../../types";
 import chroma from "chroma-js";
 
