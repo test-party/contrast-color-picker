@@ -1,7 +1,7 @@
 import React from "react";
 
 import { AlphaColorPicker } from "./common/AlphaColorPicker";
-import { HsvaInputFields } from "./common/HsvaInputFields";
+import { HsvaColorInput } from "./HsvaColorInput";
 import { ColorModel, ColorPickerBaseProps, HsvaColor } from "../types";
 import { equalColorObjects } from "../utils/compare";
 import { roundHsva } from "../utils/convert";
@@ -19,7 +19,7 @@ export const HsvaColorPicker = (props: Partial<ColorPickerBaseProps<HsvaColor>>)
     {
       (props.color && props.onChange) 
       &&
-      <HsvaInputFields color={props.color} onChange={props.onChange} />
+      <HsvaColorInput color={props.color} onChange={props.onChange} />
     }
   </AlphaColorPicker>
 );

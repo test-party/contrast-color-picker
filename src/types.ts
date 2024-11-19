@@ -63,7 +63,7 @@ export interface ColorInputBaseProps extends ColorInputHTMLAttributes {
   onChange?: (newColor: string) => void;
 }
 
-export interface HsvaInputBaseProps<T extends AnyColor> extends ColorPickerHTMLAttributes {
+export interface ObjectColorInputBaseProps<T extends ObjectColor> extends ColorPickerHTMLAttributes {
   color: T;
   onChange: (newColor: T) => void;
 }

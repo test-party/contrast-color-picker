@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { HsvaColor } from "../../types";
-import { HsvaInputBaseProps } from "../../types";
+import { HsvColor } from "../types";
+import { ObjectColorInputBaseProps } from "../types";
 
-interface HsvaInputFieldsProps extends HsvaInputBaseProps<HsvaColor> {
+interface HsvInputFieldsProps extends ObjectColorInputBaseProps<HsvColor> {
   label?: string;
 }
 
-export const HsvaInputFields = ({color, onChange, label}: HsvaInputFieldsProps): JSX.Element => {
+export const HsvColorInput = ({color, onChange, label}: HsvInputFieldsProps): JSX.Element => {
   const [inputValues, setInputValues] = useState({
     h: color.h.toString(),
     s: color.s.toString(),
-    v: color.v.toString(),
-    a: color.a.toString(),
+    v: color.v.toString()
   })
 
   useEffect(() => {
@@ -19,21 +18,19 @@ export const HsvaInputFields = ({color, onChange, label}: HsvaInputFieldsProps):
       if (
         prev.h === color.h.toString() &&
         prev.s === color.s.toString() &&
-        prev.v === color.v.toString() &&
-        prev.a === color.a.toString()
+        prev.v === color.v.toString()
       ) {
         return prev
       }
       return {
         h: color.h.toString(),
         s: color.s.toString(),
-        v: color.v.toString(),
-        a: color.a.toString(),
+        v: color.v.toString()
       }
     })
   }, [color])
 
-  const handleInputChange = (field: keyof HsvaColor) => (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (field: keyof HsvColor) => (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
     setInputValues(prevValues => ({
       ...prevValues,
@@ -41,7 +38,7 @@ export const HsvaInputFields = ({color, onChange, label}: HsvaInputFieldsProps):
     }))
   }
 
-  const handleInputBlur = (field: keyof HsvaColor) => () => {
+  const handleInputBlur = (field: keyof HsvColor) => () => {
     const value = inputValues[field]
     const parsedValue = parseFloat(value)
     if (value === '' || isNaN(parsedValue)) {
@@ -55,13 +52,12 @@ export const HsvaInputFields = ({color, onChange, label}: HsvaInputFieldsProps):
     let min = 0
     let max = 100
     if (field === 'h') max = 360
-    if (field === 'a') max = 1
 
     const clampedValue = Math.max(min, Math.min(max, parsedValue))
     onChange({ ...color, [field]: clampedValue })
   }
 
-  const handleKeyDown = (field: keyof HsvaColor) => (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (field: keyof HsvColor) => (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
       event.preventDefault()
       handleInputBlur(field)()
@@ -70,7 +66,7 @@ export const HsvaInputFields = ({color, onChange, label}: HsvaInputFieldsProps):
 
   return (
     <div className="input-fields">
-      <span>{label || 'HSVA'}</span>
+      <span>{label || 'HSV'}</span>
       <div className="input-fields-container">
         <input
           type="text"
@@ -95,14 +91,6 @@ export const HsvaInputFields = ({color, onChange, label}: HsvaInputFieldsProps):
           onBlur={handleInputBlur('v')}
           onKeyDown={handleKeyDown('v')}
           aria-label="Value"
-        />
-        <input
-          type="text"
-          value={inputValues.a}
-          onChange={handleInputChange('a')}
-          onBlur={handleInputBlur('a')}
-          onKeyDown={handleKeyDown('a')}
-          aria-label="Alpha"
         />
       </div>
     </div>

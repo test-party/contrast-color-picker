@@ -4,6 +4,7 @@ import { ColorPicker } from "./common/ColorPicker";
 import { ColorModel, ColorPickerBaseProps, HslColor } from "../types";
 import { equalColorObjects } from "../utils/compare";
 import { hslaToHsva, hsvaToHsla, hslaToHsl } from "../utils/convert";
+import { HslColorInput } from "./HslColorInput";
 
 const colorModel: ColorModel<HslColor> = {
   defaultColor: { h: 0, s: 0, l: 0 },
@@ -14,5 +15,11 @@ const colorModel: ColorModel<HslColor> = {
 };
 
 export const HslColorPicker = (props: Partial<ColorPickerBaseProps<HslColor>>): JSX.Element => (
-  <ColorPicker {...props} colorModel={colorModel} />
+  <ColorPicker {...props} colorModel={colorModel}>
+    {
+      (props.color && props.onChange) 
+      &&
+      <HslColorInput color={props.color} onChange={props.onChange} />
+    }
+  </ColorPicker>
 );
