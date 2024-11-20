@@ -6,7 +6,7 @@ interface RgbColorInputProps extends ObjectColorInputBaseProps<RgbColor> {
   label?: string;
 }
 
-export const RgbColorInput = ({color, onChange, label}: RgbColorInputProps): JSX.Element => {
+export const RgbColorInput = ({color, onChange, label="RGB"}: RgbColorInputProps): JSX.Element => {
   const [inputValues, setInputValues] = useState({
     r: color.r.toString(),
     g: color.g.toString(),
@@ -65,9 +65,10 @@ export const RgbColorInput = ({color, onChange, label}: RgbColorInputProps): JSX
 
   return (
     <div className="input-fields">
-      <span>{label || 'RGB'}</span>
-      <div className="input-fields-container">
+      <label id={`${label}-group-label`} htmlFor={`${label}-red-input`}>{label}</label>
+      <div className="input-fields-container" role="group" aria-labelledby={`${label}-group-label`}>
         <input
+          id={`${label}-red-input`}
           type="text"
           value={inputValues.r}
           onChange={handleInputChange('r')}

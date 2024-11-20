@@ -6,7 +6,7 @@ interface RgbaColorInputProps extends ObjectColorInputBaseProps<RgbaColor> {
   label?: string;
 }
 
-export const RgbaColorInput = ({color, onChange, label}: RgbaColorInputProps): JSX.Element => {
+export const RgbaColorInput = ({color, onChange, label="RGBA"}: RgbaColorInputProps): JSX.Element => {
   const [inputValues, setInputValues] = useState({
     r: color.r.toString(),
     g: color.g.toString(),
@@ -69,9 +69,10 @@ export const RgbaColorInput = ({color, onChange, label}: RgbaColorInputProps): J
 
   return (
     <div className="input-fields">
-      <span>{label || 'RGBA'}</span>
-      <div className="input-fields-container">
+      <label id={`${label}-group-label`} htmlFor={`${label}-red-input`}>{label}</label>
+      <div className="input-fields-container" role="group" aria-labelledby={`${label}-group-label`}>
         <input
+          id={`${label}-red-input`}
           type="text"
           value={inputValues.r}
           onChange={handleInputChange('r')}

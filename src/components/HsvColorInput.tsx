@@ -6,7 +6,7 @@ interface HsvInputFieldsProps extends ObjectColorInputBaseProps<HsvColor> {
   label?: string;
 }
 
-export const HsvColorInput = ({color, onChange, label}: HsvInputFieldsProps): JSX.Element => {
+export const HsvColorInput = ({color, onChange, label="HSV"}: HsvInputFieldsProps): JSX.Element => {
   const [inputValues, setInputValues] = useState({
     h: color.h.toString(),
     s: color.s.toString(),
@@ -66,9 +66,10 @@ export const HsvColorInput = ({color, onChange, label}: HsvInputFieldsProps): JS
 
   return (
     <div className="input-fields">
-      <span>{label || 'HSV'}</span>
-      <div className="input-fields-container">
+      <label id={`${label}-group-label`} htmlFor={`${label}-hue-input`}>{label}</label>
+      <div className="input-fields-container" role="group" aria-labelledby={`${label}-group-label`}>
         <input
+          id={`${label}-hue-input`}
           type="text"
           value={inputValues.h}
           onChange={handleInputChange('h')}

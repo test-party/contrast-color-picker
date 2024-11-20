@@ -6,7 +6,7 @@ interface HslColorInputProps extends ObjectColorInputBaseProps<HslColor> {
   label?: string;
 }
 
-export const HslColorInput = ({color, onChange, label}: HslColorInputProps): JSX.Element => {
+export const HslColorInput = ({color, onChange, label="HSL"}: HslColorInputProps): JSX.Element => {
   const [inputValues, setInputValues] = useState({
     h: color.h.toString(),
     s: color.s.toString(),
@@ -66,9 +66,10 @@ export const HslColorInput = ({color, onChange, label}: HslColorInputProps): JSX
 
   return (
     <div className="input-fields">
-      <span>{label || 'HSL'}</span>
-      <div className="input-fields-container">
+      <label id={`${label}-group-label`} htmlFor={`${label}-hue-input`}>{label}</label>
+      <div className="input-fields-container" role="group" aria-labelledby={`${label}-group-label`}>
         <input
+          id={`${label}-hue-input`}
           type="text"
           value={inputValues.h}
           onChange={handleInputChange('h')}
