@@ -37,13 +37,13 @@ Color accessibility is crucial for creating inclusive web applications. The **Co
 ### Using npm
 
 ```bash
-npm install @test-party/color-contrast-picker chroma-js react react-dom
+npm install @test-party/contrast-color-picker chroma-js react react-dom
 ```
 
 ### Using Yarn
 
 ```bash
-yarn add @test-party/color-contrast-picker chroma-js react react-dom
+yarn add @test-party/contrast-color-picker chroma-js react react-dom
 ```
 
 > **Note:** Ensure that you have the necessary peer dependencies installed (`react` and `react-dom`).
@@ -56,7 +56,7 @@ To utilize the Contrast Color Picker in your React application, follow the examp
 
 ```jsx
 import { useState } from 'react';
-import { HexColorPicker } from '@test-party/color-contrast-picker';
+import { HexColorPicker } from '@test-party/contrast-color-picker';
 
 function App() {
   const [hexForegroundColor, setHexForegroundColor] = useState("#000000");
