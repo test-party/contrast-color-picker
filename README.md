@@ -1,5 +1,7 @@
 # Contrast Color Picker
 
+![HexColorPicker Screenshot](./assets/hex-color-picker.png)
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-0.0.1-green.svg)
 
