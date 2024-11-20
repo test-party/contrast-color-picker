@@ -1,6 +1,6 @@
 # Contrast Color Picker
 
-![HexColorPicker Screenshot](./demo/src/assets/hex-color-picker.png)
+![HexColorPicker Screenshot](./demo/src/assets/hex-color-picker.png) {width=300px}
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-0.0.1-green.svg)
