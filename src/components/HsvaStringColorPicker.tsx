@@ -4,6 +4,7 @@ import { AlphaColorPicker } from "./common/AlphaColorPicker";
 import { ColorModel, ColorPickerBaseProps } from "../types";
 import { equalColorString } from "../utils/compare";
 import { hsvaStringToHsva, hsvaToHsvaString } from "../utils/convert";
+import { HsvaStringColorInput } from "./HsvaStringColorInput";
 
 const colorModel: ColorModel<string> = {
   defaultColor: "hsva(0, 0%, 0%, 1)",
@@ -15,4 +16,8 @@ const colorModel: ColorModel<string> = {
 
 export const HsvaStringColorPicker = (
   props: Partial<ColorPickerBaseProps<string>>
-): JSX.Element => <AlphaColorPicker {...props} colorModel={colorModel} />;
+): JSX.Element => (
+  <AlphaColorPicker {...props} colorModel={colorModel}>
+    <HsvaStringColorInput {...props} label="HSVA" />
+  </AlphaColorPicker>
+);

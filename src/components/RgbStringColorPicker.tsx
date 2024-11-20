@@ -4,6 +4,7 @@ import { ColorPicker } from "./common/ColorPicker";
 import { ColorModel, ColorPickerBaseProps } from "../types";
 import { equalColorString } from "../utils/compare";
 import { rgbStringToHsva, hsvaToRgbString } from "../utils/convert";
+import { RgbStringColorInput } from "./RgbStringColorInput";
 
 const colorModel: ColorModel<string> = {
   defaultColor: "rgb(0, 0, 0)",
@@ -14,5 +15,7 @@ const colorModel: ColorModel<string> = {
 };
 
 export const RgbStringColorPicker = (props: Partial<ColorPickerBaseProps<string>>): JSX.Element => (
-  <ColorPicker {...props} colorModel={colorModel} />
+  <ColorPicker {...props} colorModel={colorModel}>
+    <RgbStringColorInput {...props} label="RGB" />
+  </ColorPicker>
 );
