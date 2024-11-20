@@ -37,16 +37,16 @@ Color accessibility is crucial for creating inclusive web applications. The **Co
 ### Using npm
 
 ```bash
-npm install @test-party/contrast-color-picker chroma-js
+npm install @test-party/contrast-color-picker
 ```
 
 ### Using Yarn
 
 ```bash
-yarn add @test-party/contrast-color-picker chroma-js
+yarn add @test-party/contrast-color-picker
 ```
 
-> **Note:** Ensure that you have the necessary peer dependencies installed (`react`, `react-dom` and `chroma-js`).
+> **Note:** Ensure that you have the necessary peer dependencies installed (`react` and `react-dom`).
 
 ## Usage
 
