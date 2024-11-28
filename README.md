@@ -1,7 +1,7 @@
 # Contrast Color Picker
 
 <div>
-  <img src="./demo/src/assets/hex-color-picker.png" alt="HexColorPicker Screenshot" width="200" />
+  <img src="./demo/src/assets/b7i1.gif" alt="HexColorPicker GIF demonstration" width="200" />
 </div>
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
