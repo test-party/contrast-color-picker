@@ -1,7 +1,18 @@
 # Contrast Color Picker
 
 <div>
-  <img src="./demo/src/assets/b7i1.gif" alt="HexColorPicker GIF demonstration" width="200" />
+  <video 
+      className="mx-auto"
+      width={200}
+      height={400}
+      controls
+  >
+      <source src="https://d31ciebpn5k6y.cloudfront.net/blog/b7i1.mp4" type="video/mp4"/>
+      Sorry, your browser doesn&apos;t support embedded videos, but don&apos;t worry, you can <a href="https://d31ciebpn5k6y.cloudfront.net/blog/b7i1.mp4">download it</a>.
+  </video>
+  <p className="sr-only">
+      Video showing a contrast color picker cycling through colors to highlight passing and failing WCAG contrast ratios.
+  </p>
 </div>
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
