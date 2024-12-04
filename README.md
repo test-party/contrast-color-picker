@@ -1,19 +1,11 @@
 # Contrast Color Picker
 
 <div>
-  <video 
-      className="mx-auto"
-      width={200}
-      height={400}
-      controls
-  >
-      <source src="./demo/src/assets/b7i1.mp4" type="video/mp4"/>
-      Sorry, your browser doesn&apos;t support embedded videos, but don&apos;t worry, you can <a href="https://d31ciebpn5k6y.cloudfront.net/blog/b7i1.mp4">download it</a>.
-  </video>
-  <p className="sr-only">
-      Video showing a contrast color picker cycling through colors to highlight passing and failing WCAG contrast ratios.
-  </p>
+  <img src="./demo/src/assets/demo_pass.png" alt="Hex Color Picker demonstrating a pass case" width="200" />
+  <img src="./demo/src/assets/demo_fail.png" alt="Hex Color Picker demonstrating a fail case" width="200" />
 </div>
+
+[Watch the demo video clip](https://d31ciebpn5k6y.cloudfront.net/blog/b7i1.mp4)
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-0.0.1-green.svg)
