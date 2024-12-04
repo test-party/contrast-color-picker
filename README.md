@@ -23,7 +23,7 @@ A fork of [react-colorful](https://github.com/omgovich/react-colorful) enhanced 
 
 ## Introduction
 
-Color accessibility is crucial for creating inclusive web applications. The **Contrast Color Picker** extends the popular `react-colorful` library by adding color contrast detection functionality. This ensures that selected color combinations meet the [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/) guidelines for color contrast, enhancing the readability and usability of your applications.
+Color accessibility is crucial for creating inclusive web applications. The Contrast Color Picker extends the popular react-colorful library by adding color contrast detection functionality. This ensures that selected color combinations meet the WCAG guidelines for color contrast. Specifically, we follow a minimum contrast ratio of 4.5:1 to ensure compliance with WCAG AA level standards, enhancing the readability and usability of your applications.
 
 ## Features
 

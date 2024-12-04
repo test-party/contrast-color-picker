@@ -31,7 +31,7 @@ export const ContrastWrapper = ({ children, foregroundColor, backgroundColor }: 
   const getContrastCompliance = (ratio: number): { level: string; pass: boolean } => {
     if (ratio >= 7) return { level: 'AAA (Highest)', pass: true }
     if (ratio >= 4.5) return { level: 'AA (Good)', pass: true }
-    if (ratio >= 3) return { level: 'AA (Large Text)', pass: true }
+    // if (ratio >= 3) return { level: 'AA (Large Text)', pass: true }
     return { level: 'Fail', pass: false }
   }
 
